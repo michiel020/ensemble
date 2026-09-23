@@ -1,0 +1,3 @@
+# Netlify: statische site, geen build-stap. Publiceert de repo-root.
+[build]
+  publish = "."

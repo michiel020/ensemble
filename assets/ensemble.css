@@ -1,0 +1,321 @@
+/* ==========================================================================
+   Ensemble — Design System V6.8 · "Blauw & Redactioneel"
+   Bron: lebara.nl (blauw, vette koppen, pills, ronde kaarten)
+       + verveagency.com (redactionele opzet, label-kolom, haarlijnen, wit)
+       + Logo/logo-ensemble.svg (violet #7911F8 + roze #FA3C96)
+   Bewust GEEN animaties of transitions. Hover/focus = directe kleurwissel.
+   ========================================================================== */
+
+/* ---------- 1. Tokens ---------- */
+:root {
+  /* blauw — kern */
+  --blue: #242EE0;        /* elektrisch blauw: koppen, links, contactvlak */
+  --navy: #0D1167;        /* inkt: bodytekst, donkere secties */
+  --night: #070723;       /* diepste vlak: footer */
+  --sky: #3A7AFE;         /* helder blauw: vlakken/iconen op donker (niet voor kleine tekst) */
+  --sky-text: #6E9BFF;    /* helder blauw voor tekst op navy (6,0:1) */
+  --lavender: #E7EBFF;    /* lichte band, kaarten, chips */
+  --lavender-2: #C9D1FF;  /* tekst/lijnen op donker */
+  /* logo-accenten */
+  --violet: #7911F8;      /* logo-voorvlak: nummers, labels, kleine accenten */
+  --pink: #FA3C96;        /* logo-schaduw: primaire CTA, markeringen */
+  /* neutraal */
+  --paper: #FAF8F5;       /* warme off-white: hero */
+  --white: #FFFFFF;
+  --muted: #565A85;       /* secundaire tekst op licht */
+  --line: #D5DAF5;        /* haarlijnen op licht */
+  --line-dark: #2B3096;   /* haarlijnen op navy */
+  --navy-2: #161B85;      /* kaart op navy */
+
+  /* rollen */
+  --bg: var(--white);
+  --ink: var(--navy);
+  --accent: var(--pink);
+
+  /* type */
+  --f-display: 'Bricolage Grotesque', 'Arial Black', system-ui, sans-serif;
+  --f-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-h1: clamp(2.5rem, 6.9vw, 5.75rem);
+  --fs-h2: clamp(2.125rem, 5vw, 4rem);
+  --fs-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --fs-statement: clamp(1.5rem, 3.1vw, 2.75rem);
+  --fs-lede: clamp(1.125rem, 1.5vw, 1.375rem);
+  --fs-body: 1.0625rem;   /* 17px */
+  --fs-small: 0.9375rem;  /* 15px */
+  --fs-label: 0.875rem;   /* 14px */
+
+  /* vorm */
+  --radius: 24px;
+  --radius-sm: 14px;
+  --pill: 9999px;
+
+  /* ruimte */
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section: clamp(4.5rem, 10vw, 8.75rem);
+  --wrap: 1240px;
+}
+
+/* ---------- 2. Basis ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; display: block; }
+a { color: var(--blue); text-underline-offset: 0.18em; text-decoration-thickness: 1.5px; }
+a:hover { color: var(--navy); }
+:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+[id] { scroll-margin-top: 96px; }
+
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: var(--section); }
+.measure { max-width: 62ch; }
+
+/* ---------- 3. Typografie ---------- */
+h1, h2, h3 { font-family: var(--f-display); margin: 0; text-wrap: balance; }
+h1, .h1 { font-size: var(--fs-h1); font-weight: 800; line-height: 0.98; letter-spacing: -0.035em; color: var(--blue); }
+h2, .h2 { font-size: var(--fs-h2); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; color: var(--blue); }
+h3, .h3 { font-size: var(--fs-h3); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; color: var(--navy); }
+
+/* Verve-statement: grote, lichte zin (sinds 6.1 zonder inspringing) */
+.statement {
+  font-size: var(--fs-statement);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  max-width: 24em;
+  margin: 0;
+  text-wrap: pretty;
+}
+.lede { font-size: var(--fs-lede); line-height: 1.5; max-width: 58ch; }
+.muted { color: var(--muted); }
+.small { font-size: var(--fs-small); }
+.label {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin: 0;
+}
+
+/* ---------- 4. Banden (sectie-achtergronden) ---------- */
+.band-paper { background: var(--paper); }
+.band-lavender { background: var(--lavender); }
+.band-navy { background: var(--navy); color: var(--white); }
+.band-blue { background: var(--blue); color: var(--white); }
+.band-night { background: var(--night); color: var(--lavender-2); }
+
+.band-navy h2, .band-navy h3, .band-blue h2, .band-blue h3 { color: var(--white); }
+.band-navy .label { color: var(--sky-text); }
+.band-blue .label { color: var(--lavender); }
+.band-navy .muted, .band-blue .muted { color: var(--lavender-2); }
+.band-navy a, .band-blue a, .band-night a { color: var(--white); }
+.band-navy a:hover, .band-blue a:hover, .band-night a:hover { color: var(--pink); }
+.band-blue a:hover { color: var(--lavender); }
+
+/* ---------- 5. Knoppen (pills) ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6em;
+  font-family: var(--f-body); font-size: 1.0625rem; font-weight: 600; line-height: 1;
+  padding: 1.05em 1.6em;
+  border-radius: var(--pill);
+  border: 2px solid transparent;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.btn .arrow {
+  display: inline-grid; place-items: center;
+  width: 1.7em; height: 1.7em; margin-right: -0.6em;
+  border-radius: 50%; background: var(--navy); color: var(--white); font-size: 0.9em;
+}
+.btn-primary { background: var(--pink); color: var(--navy); }
+.btn-primary:hover { background: var(--navy); color: var(--white); }
+.btn-primary:hover .arrow { background: var(--pink); color: var(--navy); }
+.btn-secondary { background: transparent; color: var(--blue); border-color: var(--blue); }
+.btn-secondary:hover { background: var(--blue); color: var(--white); }
+.btn-sm { font-size: 0.9375rem; padding: 0.8em 1.25em; }
+.band-navy .btn-primary:hover, .band-blue .btn-primary:hover { background: var(--white); color: var(--navy); }
+.band-navy .btn-secondary, .band-blue .btn-secondary { color: var(--white); border-color: var(--white); }
+.band-navy .btn-secondary:hover, .band-blue .btn-secondary:hover { background: var(--white); color: var(--navy); }
+
+.link-arrow { font-weight: 600; font-size: var(--fs-lede); }
+
+/* foto-placeholder (rond, grijs) — in 6.6 komt hier een <img> in */
+.avatar { display: inline-block; flex: none; width: 4rem; height: 4rem; border-radius: 50%; background: #CFCFCF; overflow: hidden; }
+.duo .avatar { border: 3px solid var(--paper); }
+.duo .avatar + .avatar { position: relative; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.duo { display: inline-flex; flex: none; }
+.duo .avatar + .avatar { margin-left: -1.25rem; }
+.hero-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+
+/* persoonslink met LinkedIn-icoon (icoon in tekstkleur, "in" in de achtergrondkleur) */
+.person-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(11.5rem, max-content)); gap: 1rem 2.5rem; list-style: none; margin: 0; padding: 0; }
+.person-links a { display: inline-flex; align-items: center; gap: 0.5em; font-weight: 600; text-decoration: none; }
+.person-links .avatar { width: 5.2rem; height: 5.2rem; margin-right: 0.75rem; }  /* 30% groter dan --avatar: hier zie je de persoon */
+.person-links a:hover { text-decoration: underline; }
+.person-links .li { flex: none; }
+.card-blue .person-links a { color: var(--white); --li-bg: var(--blue); }
+.band-blue .person-links a { color: var(--white); --li-bg: var(--blue); }
+.person-links-light a { color: var(--blue); --li-bg: var(--white); }
+
+/* ---------- 6. Navigatie ---------- */
+.nav { position: sticky; top: 0; z-index: 10; background: var(--white); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 76px; }
+.nav-logo img { height: 30px; width: auto; }
+.nav-links {
+  display: flex; gap: 0.25rem; list-style: none; margin: 0; padding: 0.3rem;
+  background: var(--lavender); border-radius: var(--pill);
+}
+.nav-links a {
+  display: block; padding: 0.5em 1.1em; border-radius: var(--pill);
+  color: var(--navy); font-size: var(--fs-small); font-weight: 500; text-decoration: none;
+}
+.nav-links a:hover { background: var(--white); color: var(--blue); }
+
+/* ---------- 7. Redactioneel raster (label-kolom + inhoud) ---------- */
+.split { display: grid; gap: 1.5rem var(--gutter); }
+.section-head { margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.section-head h2 + .statement, .section-head h2 + .lede { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+
+/* rijen met haarlijnen */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rows > li { border-bottom: 1px solid var(--line); padding-block: clamp(1.25rem, 2.4vw, 2rem); }
+.band-navy .rows, .band-navy .rows > li { border-color: var(--line-dark); }
+
+/* grote uitspraken-lijst ("Wanneer bel je ons") — zonder nummers */
+.claims p { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.5rem, 3.2vw, 2.625rem); line-height: 1.08; letter-spacing: -0.025em; color: var(--navy); margin: 0; }
+.claims p em { font-style: normal; color: var(--blue); }
+
+/* stappen-rijen ("Zo verloopt een traject") */
+.steps > li { display: grid; gap: 0.5rem var(--gutter); }
+.steps .when { padding-top: 0.35em; }
+.steps h3 { margin-bottom: 0.5rem; }
+.steps p { max-width: 62ch; }
+
+/* ---------- 8. Chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; margin: 0; padding: 0; }
+.chips li {
+  padding: 0.6em 1.15em; border-radius: var(--pill);
+  background: var(--lavender); color: var(--navy);
+  font-weight: 500; font-size: var(--fs-body);
+}
+.band-lavender .chips li { background: var(--white); }
+
+/* ---------- 9. Kaarten ---------- */
+.cards { display: grid; gap: 1.25rem; }
+.card { background: var(--white); border-radius: var(--radius); padding: clamp(1.5rem, 2.6vw, 2.5rem); }
+.card .n { font-family: var(--f-display); font-weight: 800; font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -0.03em; color: var(--blue); margin: 0 0 1.5rem; }
+.card h3 { margin-bottom: 0.75rem; }
+.card-lavender { background: var(--lavender); }
+.card-blue { background: var(--blue); color: var(--white); }
+.card-blue h3 { color: var(--white); }
+.card-navy { background: var(--navy-2); color: var(--white); }
+.card-navy h3 { color: var(--white); }
+.card-outline { background: transparent; border: 1.5px solid var(--line); }
+
+/* callout */
+.callout { background: var(--lavender); border-radius: var(--radius); padding: clamp(1.25rem, 2.4vw, 2rem) clamp(1.5rem, 2.6vw, 2.5rem); font-size: var(--fs-lede); line-height: 1.5; }
+.callout strong { color: var(--blue); }
+
+/* ---------- 10. Cijfers ---------- */
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin: 0; }
+.stat { background: var(--navy-2); border-radius: var(--radius); padding: clamp(1rem, 2.4vw, 2rem); }
+.stat dt { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.625rem, 4.6vw, 4rem); line-height: 1; letter-spacing: -0.035em; color: var(--white); }
+.stat dd { margin: 0.6rem 0 0; color: var(--lavender-2); font-size: var(--fs-small); line-height: 1.4; }
+.stat-accent { background: var(--pink); }
+.stat-accent dt, .stat-accent dd { color: var(--navy); }
+
+/* sticker (hero-bewijs, à la prijskaartje) */
+.sticker { display: inline-grid; grid-template-columns: auto 1fr; align-items: center; gap: 1.1rem; background: var(--navy); color: var(--white); border-radius: var(--radius); padding: 1.1rem 1.5rem 1.1rem 1.1rem; max-width: 34rem; }
+.sticker .icon { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; background: var(--lavender); color: var(--navy); border-radius: var(--radius-sm); }
+.sticker .icon svg { display: block; }
+.sticker p { font-size: var(--fs-small); line-height: 1.4; margin: 0; }
+a.sticker { text-decoration: none; }
+a.sticker:hover { color: var(--white); background: var(--navy-2); }
+
+/* ---------- 11. Citaat ---------- */
+.quote { margin: 0; border-left: 6px solid var(--pink); padding-left: clamp(1.25rem, 2.5vw, 2.25rem); font-size: var(--fs-statement); line-height: 1.2; letter-spacing: -0.02em; max-width: 26em; }
+.quote b { font-family: var(--f-display); font-weight: 800; color: var(--sky-text); }
+
+/* ---------- 12. Meta-lijst ---------- */
+.meta { display: grid; gap: 0; margin: 0; font-size: var(--fs-small); border-top: 1px solid var(--line-dark); }
+.meta > div { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; padding-block: 0.85rem; border-bottom: 1px solid var(--line-dark); }
+.meta dt { color: var(--lavender-2); }
+.meta dd { margin: 0; }
+
+/* ---------- 13. Nee-lijst ---------- */
+.nots > li { display: grid; grid-template-columns: 2.25rem 1fr; gap: 1.25rem; align-items: start; }
+.nots .x { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--pink); color: var(--navy); margin-top: 0.2em; }
+.nots .x svg { display: block; }
+.nots p { font-size: var(--fs-lede); line-height: 1.5; max-width: 60ch; }
+.nots strong { color: var(--blue); }
+
+/* ---------- 14. Formulieren (spec — niet gebruikt op de voorbeeldsite) ---------- */
+.field { display: grid; gap: 0.4rem; }
+.field label { font-size: var(--fs-small); font-weight: 600; }
+.field input, .field textarea {
+  font: inherit; color: var(--navy); background: var(--white);
+  border: 1.5px solid var(--line); border-radius: var(--radius-sm); padding: 0.85em 1em; width: 100%;
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--lavender); }
+
+/* ---------- 15. Footer ---------- */
+.footer { padding-block: clamp(3rem, 6vw, 5rem) 2rem; }
+.footer-logo { height: 44px; width: auto; }
+.footer-tag { font-family: var(--f-display); font-weight: 700; font-size: var(--fs-h3); color: var(--white); margin-top: 1.25rem; }
+.footer-bottom { margin-top: clamp(2.5rem, 5vw, 4rem); padding-top: 1.5rem; border-top: 1px solid var(--line-dark); font-size: var(--fs-small); display: grid; gap: 0.5rem; }
+.footer-bottom ul { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; list-style: none; margin: 0; padding: 0; }
+.footer-bottom a { color: var(--lavender-2); text-decoration: none; }
+
+/* ---------- 16. Responsief ---------- */
+@media (max-width: 899px) {
+  /* mobiel/tablet-portret: menu als scrollbare rij onder logo en knop */
+  .nav-inner { flex-wrap: wrap; row-gap: 0; min-height: 64px; padding-top: 0.6rem; }
+  [id] { scroll-margin-top: 120px; }  /* sticky header is hoger door de menurij */
+  .nav-inner nav { order: 3; flex-basis: 100%; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); overflow-x: auto; scrollbar-width: none; }
+  .nav-inner nav::-webkit-scrollbar { display: none; }
+  .nav-links { background: none; padding: 0.35rem 0 0.6rem; gap: 0.15rem; width: max-content; }
+  .nav-links a { padding: 0.45em 0.85em; background: var(--lavender); }
+  .nav-logo img { height: 26px; }
+  .btn-sm { padding: 0.75em 1.05em; }
+  .hero { padding-top: clamp(2.5rem, 7vw, 4rem); }
+  .hero-cta { gap: 1.25rem; }
+  .card { padding: 1.5rem 1.25rem; }
+  .claims p { font-size: clamp(1.375rem, 5.6vw, 2rem); }
+  .quote { border-left-width: 4px; }
+  .nots > li { grid-template-columns: 2rem 1fr; gap: 1rem; }
+  .nots .x { width: 2rem; height: 2rem; }
+  .footer-bottom ul { gap: 0.4rem 1.1rem; }
+  .meta > div { grid-template-columns: 1fr; gap: 0.1rem; }
+  .sticker { grid-template-columns: 1fr; }
+  .sticker .icon { justify-self: start; }
+}
+@media (min-width: 700px) {
+  .cards-2 { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* tablet-portret (700–999px): drie kaarten naast elkaar wordt te krap, dus gestapeld; vanaf 1000px drie kolommen */
+@media (min-width: 1000px) {
+  .cards-3 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 700px) and (max-width: 999px) {
+  .cards-3 .card { max-width: 40rem; }
+}
+/* aanraakschermen: geen hover-afhankelijke states, iets ruimere doelen */
+@media (hover: none) {
+  .nav-links a, .footer-bottom a { padding-block: 0.6em; }
+}
+@media (min-width: 900px) {
+  .split { grid-template-columns: 3fr 9fr; }
+  .steps > li { grid-template-columns: 3fr 9fr; }
+}

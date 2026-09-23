@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ensemble — Jouw idee en ambitie. Onze schouders eronder.</title>
+  <meta name="description" content="Ensemble krijgt nieuwe initiatieven van de grond. Twee ondernemers die publiek-private initiatieven, consortia en ventures in weken werkend maken." />
+  <link rel="canonical" href="https://withensemble.nl/" />
+  <!-- Open Graph / social preview — voorzet; og:image is 1200×630 (assets/og-image.jpg) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ensemble" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:url" content="https://withensemble.nl/" />
+  <meta property="og:title" content="Ensemble — Jouw idee en ambitie. Onze schouders eronder." />
+  <meta property="og:description" content="Ensemble krijgt nieuwe initiatieven van de grond. Twee ondernemers die publiek-private initiatieven, consortia en ventures in weken werkend maken." />
+  <meta property="og:image" content="https://withensemble.nl/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ensemble — Jouw idee en ambitie. Onze schouders eronder." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/ensemble.css" />
+  <style>
+    /* pagina-specifiek — alles herbruikbaars staat in assets/ensemble.css */
+    .hero { padding-block: clamp(3.5rem, 8vw, 7rem) clamp(3.5rem, 7vw, 6rem); }
+    .hero-grid { display: grid; gap: clamp(2rem, 4vw, 3.5rem); margin-top: clamp(2rem, 4vw, 3.5rem); }
+    .hero-cta { display: grid; gap: 1.75rem; align-content: start; justify-items: start; }
+    @media (min-width: 900px) { .hero-grid { grid-template-columns: 7fr 5fr; align-items: start; } }
+    .stack > * + * { margin-top: clamp(2.5rem, 5vw, 4.5rem); }
+    .case-intro { display: grid; gap: 1.5rem var(--gutter); }
+    @media (min-width: 900px) { .case-intro { grid-template-columns: 1fr 1fr; } }
+    .case-sub { font-size: var(--fs-statement); line-height: 1.18; letter-spacing: -0.02em; color: var(--lavender-2); margin: 1.5rem 0 0; max-width: 24em; }
+    .phase .label { margin-bottom: 0.2rem; }
+    .phase .period { font-size: var(--fs-small); color: var(--lavender-2); margin-bottom: 1.25rem; }
+    .contact h2 { max-width: 16em; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .contact-sub { font-family: var(--f-display); font-weight: 700; font-size: var(--fs-h3); color: var(--lavender); margin: 1rem 0 0; }
+  </style>
+</head>
+<body>
+
+  <!-- MENU -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-logo" href="#top" aria-label="Ensemble — naar boven"><img src="assets/logo-ensemble.svg" alt="Ensemble" width="178" height="30" /></a>
+      <nav aria-label="Hoofdmenu">
+        <ul class="nav-links">
+          <li><a href="#voor-wie">Voor wie</a></li>
+          <li><a href="#aanpak">Aanpak</a></li>
+          <li><a href="#case">Case</a></li>
+          <li><a href="#wie-we-zijn">Wie we zijn</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#contact">Plan een gesprek</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero band-paper">
+      <div class="wrap">
+        <h1>Jouw idee en ambitie.<br />Onze schouders eronder.</h1>
+        <div class="hero-grid">
+          <p class="lede">Wij starten initiatieven op waar iets van afhangt. Ook als er meerdere partijen aan tafel zitten en niemand de baas is. Twee op elkaar ingespeelde ondernemers die jouw initiatief waarmaken, in weken waar anderen maanden nodig hebben. Met de hele groep erachter.</p>
+          <div class="hero-cta">
+            <div class="hero-cta-row">
+              <a class="btn btn-primary" href="mailto:hallo@withensemble.nl">Bel of mail ons <span class="arrow" aria-hidden="true">→</span></a>
+              <span class="duo"><span class="avatar"><img src="assets/foto-michiel.jpg" alt="Michiel" width="480" height="480" /></span><span class="avatar"><img src="assets/foto-reinout.jpg" alt="Reinout" width="480" height="480" /></span></span>
+            </div>
+            <a class="sticker" href="#case" style="text-decoration:none">
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3M13 14h3M8 17.5h3" stroke-width="2.4"/></svg></span>
+              <p><strong>Recent:</strong> in 9 weken de basis van een landelijk platform live gebracht voor vier publieke organisaties om op door te bouwen.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIE 3 — WANNEER BEL JE ONS -->
+    <section class="section" id="voor-wie">
+      <div class="wrap stack">
+        <div class="split">
+          <p class="label">Voor wie</p>
+          <div>
+            <h2 class="section-head">Wanneer bel je ons</h2>
+            <ol class="rows claims">
+              <li><p>Het idee ligt er. <em>Al een tijdje.</em></p></li>
+              <li><p>Het budget staat klaar. <em>Het team niet.</em></p></li>
+              <li><p>Iedereen heeft een belang. <em>Niemand trekt de kar.</em></p></li>
+              <li><p>Elk overleg begint weer <em>bij het begin.</em></p></li>
+            </ol>
+          </div>
+        </div>
+        <div class="split">
+          <p class="label">Waar we thuis zijn</p>
+          <div>
+            <ul class="chips">
+              <li>Publiek-private initiatieven</li>
+              <li>Consortia</li>
+              <li>Corporate ventures</li>
+              <li>Startups</li>
+              <li>Platforms</li>
+              <li>Joint ventures</li>
+              <li>Transitieprogramma's</li>
+            </ul>
+            <p class="lede" style="margin-top:2rem"><strong>Herken je dit?</strong> Dan is de kans groot dat wij passen bij wat jij nodig hebt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIE 4 — BOUWEN OM TE WETEN -->
+    <section class="section band-lavender" id="aanpak">
+      <div class="wrap">
+        <div class="split section-head">
+          <p class="label">Aanpak</p>
+          <div>
+            <h2>Bouwen om te weten</h2>
+            <p class="statement">Een werkende oplossing beantwoordt in twee weken vragen waar een onderzoek een kwartaal over doet. En het is een stuk makkelijker om het met vijf partijen eens te worden over iets dat je kunt zien dan over iets dat je je moet voorstellen.</p>
+          </div>
+        </div>
+        <div class="cards cards-3">
+          <article class="card">
+            <p class="n">01</p>
+            <h3>Leren met lean</h3>
+            <p>Van idee naar validatie, MVP en opschaling. We kennen die route goed genoeg om te weten wanneer je hem moet volgen en wanneer niet — want een initiatief met meerdere partijen verloopt zelden zoals het handboek beschrijft.</p>
+          </article>
+          <article class="card">
+            <p class="n">02</p>
+            <h3>Versnellen met AI</h3>
+            <p>Research, validatie, prototypes, bouwen zonder een developmentteam op te tuigen. Wij hebben een werkend prototype voordat de inkoopprocedure rond is.</p>
+          </article>
+          <article class="card">
+            <p class="n">03</p>
+            <h3>Slagen met elkaar</h3>
+            <p>Want het echte bouwen blijft mensenwerk: een team vormen, klanten begrijpen, partners binnenhalen. Zeker met veel stakeholders. Iedereen levert zijn inbreng en samen zetten we de koers. Zonder te verzanden in consensus waarbij alles verwatert. Wij weten mensen met de neus dezelfde kant op te krijgen, energie te geven en continu tastbare vooruitgang te boeken.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIE 5 — ZO VERLOOPT EEN TRAJECT -->
+    <section class="section" id="traject">
+      <div class="wrap">
+        <div class="split section-head">
+          <p class="label">Traject</p>
+          <div>
+            <h2>Zo verloopt een traject</h2>
+            <p class="statement">Een initiatief van de grond krijgen is geen eenmanswerk. Er gebeurt te veel tegelijk: bouwen én de organisatie meenemen, klanten én stakeholders. Dat het onderweg schuurt hoort erbij — meestal is dat het teken dat er echt iets op het spel staat.</p>
+            <p class="lede muted" style="margin-top:2rem">En zit de één in een stuurgroep, dan loopt het bij de ander door. Dat is het verschil tussen twee mensen en één interimmer.</p>
+          </div>
+        </div>
+
+        <ol class="rows steps">
+          <li>
+            <p class="label when">Week 1</p>
+            <div>
+              <h3>We stappen in</h3>
+              <p>Geen wervingstraject, geen inwerkperiode, geen kwartaal opstarten. We spreken je stakeholders, lezen wat er ligt en brengen in kaart waar het vastzit. Aan het eind van die week hoor je van ons wat er volgens ons moet gebeuren.</p>
+            </div>
+          </li>
+          <li>
+            <p class="label when">Vanaf week 2</p>
+            <div>
+              <h3>Bouwen en valideren tegelijk</h3>
+              <p>Elke twee weken laten we zien wat er werkt: een gevalideerde aanname, een prototype, een pagina die live staat. Is er een keer niets te laten zien, dan bespreken we waarom. Dat gesprek levert meer op dan een voortgangsrapportage. Je hoeft er niet bovenop te zitten; we halen je erbij als het ertoe doet.</p>
+            </div>
+          </li>
+          <li>
+            <p class="label when">Elk kwartaal</p>
+            <div>
+              <h3>Een mijlpaal live</h3>
+              <p>Niet één oplevermoment aan het eind, maar elk kwartaal iets dat draait en gebruikt wordt. Dat verandert de dynamiek: stuurgroep en partners zien voortgang in plaats van plannen. Discussies gaan over wat er werkt in plaats van over wat er zou kunnen werken, en de volgende stap is makkelijker samen te besluiten.</p>
+            </div>
+          </li>
+          <li>
+            <p class="label when">En daarna</p>
+            <div>
+              <h3>Het blijft draaien zonder ons</h3>
+              <p>Wij bouwen iets dat duurzaam, stabiel en schaalbaar is. Team, ritme en eigenaarschap zijn geborgd wanneer wij het stokje overgeven aan de mensen die het initiatief structureel zullen aansturen, zodra de basis staat.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="split" style="margin-top:clamp(2.5rem,5vw,4rem)">
+          <span></span>
+          <div>
+            <p class="callout"><strong>Ons ritme:</strong> wekelijks inchecken, elke twee weken laten zien wat werkt, maandelijks uitzoomen op de doelen, elk kwartaal een mijlpaal live.</p>
+            <p style="margin-top:2rem"><a class="link-arrow" href="#case">Zo ging het bij het Kennisplatform Energiehubs → bekijk de case</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIE 6 — CASE -->
+    <section class="section band-navy" id="case">
+      <div class="wrap stack">
+        <div>
+          <p class="label" style="margin-bottom:1.25rem">Waar we trots op zijn</p>
+          <h2>Het Kennisplatform Energiehubs</h2>
+          <p class="case-sub">In negen weken van verspreide kennis naar de landelijke plek waar partijen elkaar vinden om energiehubs van de grond te krijgen.</p>
+        </div>
+
+        <div class="case-intro">
+          <p class="lede">Ondernemers die willen groeien of verduurzamen lopen vast op het stroomnet. Een energiehub is vaak het antwoord, maar in 2025 was er geen plek waar je kon zien wat er al bestond, wat werkte en wie je moest bellen. De kennis zat verspreid over rapporten, mailwisselingen en losse initiatieven.</p>
+          <p class="lede muted">Samen met het Ministerie van Economische Zaken en Klimaat, RVO, Netbeheer Nederland en PVB bouwden we die plek.</p>
+        </div>
+
+        <dl class="stats">
+          <div class="stat stat-accent"><dt>9 weken</dt><dd>eerste versie live gebracht</dd></div>
+          <div class="stat"><dt>5</dt><dd>grote platformreleases</dd></div>
+          <div class="stat"><dt>125</dt><dd>items in Kennisbank en Tools</dd></div>
+          <div class="stat"><dt>2.300</dt><dd>bezoekers per maand</dd></div>
+          <div class="stat"><dt>50.000+</dt><dd>luisteraars naar 17 podcasts</dd></div>
+          <div class="stat"><dt>8,6</dt><dd>waardering Ontmoetingsplaats Utrecht</dd></div>
+        </dl>
+
+        <div class="cards cards-3">
+          <article class="card card-outline phase" style="border-color:var(--line-dark)">
+            <p class="label">Fase 1</p>
+            <p class="period">Januari — april 2025</p>
+            <h3 style="color:var(--white)">Kennis ontsluiten</h3>
+            <p>Op basis van meer dan veertig gesprekken met overheden, netbeheerders, marktpartijen en energiehubs stelden we een ontwikkelagenda op. Negen weken later stond de eerste versie live: stappenplan, kennisbank, tools en de eerste praktijkcases.</p>
+          </article>
+          <article class="card card-outline phase" style="border-color:var(--line-dark)">
+            <p class="label">Fase 2</p>
+            <p class="period">Mei — december 2025</p>
+            <h3 style="color:var(--white)">Verbreden op wat gebruikers vroegen</h3>
+            <p>Elk kwartaal een release, steeds op basis van gebruikersfeedback. De initiatievenradar groeide van nul naar ruim tweehonderd aangemelde hubs. Er kwamen een expertsectie, een begrippenbank en extra tools en cases; kennisbank en tools samen naar 125 items.</p>
+          </article>
+          <article class="card card-outline phase" style="border-color:var(--line-dark)">
+            <p class="label">Fase 3</p>
+            <p class="period">Vanaf januari 2026</p>
+            <h3 style="color:var(--white)">Opschalen en verbinden</h3>
+            <p>Het platform is onderdeel van PVB/TKI Urban Energy. Zes werkgroepen pakken aan wat opschaling tegenhoudt: cyberweerbaarheid, kostenbenchmark en businesscase, verzekerbaarheid, modelcontracten, IT-landschap en financiering. En er kwam een nieuwe doelgroep bij: gemeenten.</p>
+          </article>
+        </div>
+
+        <blockquote class="quote">
+          <b>Van</b> verspreide kennis <b>naar</b> 1 centrale plek met de kennis, mensen en middelen om een energiehub daadwerkelijk van de grond te krijgen.
+        </blockquote>
+
+        <dl class="meta">
+          <div><dt>Opdrachtgever</dt><dd>TKI Urban Energy</dd></div>
+          <div><dt>Initiatief van</dt><dd>Ministerie van Economische Zaken en Klimaat, RVO, Netbeheer Nederland en PVB</dd></div>
+          <div><dt>Periode</dt><dd>januari 2025 — lopend</dd></div>
+          <div><dt>Team</dt><dd>gegroeid naar 8 fte</dd></div>
+          <div><dt>Onze rol</dt><dd><strong>Venture builder, Content Lead, Product Owner</strong></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- SECTIE 7 — GOED KENNIS TE MAKEN -->
+    <section class="section" id="wie-we-zijn">
+      <div class="wrap">
+        <div class="split section-head">
+          <p class="label">Wie we zijn</p>
+          <div>
+            <h2>Goed kennis te maken</h2>
+            <p class="statement">Twee ondernemers met ruim twintig jaar ervaring in innovatie, transformatie, AI en productontwikkeling — en een duidelijke rolverdeling.</p>
+          </div>
+        </div>
+        <div class="cards cards-2">
+          <article class="card card-blue">
+            <h3>Samen</h3>
+            <p class="lede"><strong>Michiel duwt de vernieuwing vooruit. Reinout zorgt dat de organisatie kan volgen.</strong></p>
+            <p>Michiel brengt ideeën van nul naar één en creëert het momentum om te starten. Reinout maakt complexe ideeën begrijpelijk, brengt de juiste mensen bij elkaar en bouwt het draagvlak en de structuur om ze daadwerkelijk te laten landen.</p>
+            <ul class="person-links" style="margin-top:1.75rem">
+              <li><a href="https://www.linkedin.com/in/michielalkemade/" target="_blank" rel="noopener"><span class="avatar"><img src="assets/foto-michiel.jpg" alt="Michiel" width="480" height="480" loading="lazy" /></span>Michiel <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg><span class="sr-only"> op LinkedIn</span></a></li>
+              <li><a href="https://www.linkedin.com/in/rdengelbronner/" target="_blank" rel="noopener"><span class="avatar"><img src="assets/foto-reinout.jpg" alt="Reinout" width="480" height="480" loading="lazy" /></span>Reinout <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg><span class="sr-only"> op LinkedIn</span></a></li>
+            </ul>
+          </article>
+          <article class="card card-lavender">
+            <h3>Ons netwerk</h3>
+            <p>Als het helpt, halen we ons netwerk erbij: specialisten in AI, marketing, communicatie en PR, development of finance. Wat hen bindt is dat ze betrokken en gedreven zijn, met diepe vakkennis en ondernemersbloed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIE 8 — NIET JOUW PARTIJ -->
+    <section class="section band-paper" id="niet-jouw-partij">
+      <div class="wrap">
+        <div class="split">
+          <p class="label">Voor wie niet</p>
+          <div>
+            <h2 class="section-head">Wanneer zijn wij niet jouw partij</h2>
+            <ul class="rows nots">
+              <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2.75" stroke-linecap="round"/></svg></span><p><strong>Je zoekt onderzoek of een advies.</strong> Wij leveren geen rapport maar iets dat werkt en gebruikt wordt. Zoek je het eerste, dan zijn wij niet wat je nodig hebt.</p></li>
+              <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2.75" stroke-linecap="round"/></svg></span><p><strong>Er ligt al een uitgewerkte roadmap en je zoekt extra handen.</strong> Wij komen tot ons recht als er nog richting te bepalen valt; puur uitvoeren doet een ander beter.</p></li>
+              <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2.75" stroke-linecap="round"/></svg></span><p><strong>Je zoekt iemand die het jarenlang blijft beheren.</strong> Wij zijn er voor de start en de opbouw, en dragen daarna over aan een vast team.</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIE 9 — CONTACT -->
+    <section class="section band-blue contact" id="contact">
+      <div class="wrap">
+        <h2>Klaar om je initiatief van de grond te krijgen?</h2>
+        <p class="contact-sub">We ontmoeten je graag en vertellen er meer over.</p>
+        <p class="lede" style="margin-top:2.5rem">Mail ons, dan nemen we contact op. Eén gesprek is genoeg om te weten of het klikt. Daarna weet je binnen een week wat het kost en wanneer we kunnen starten.</p>
+        <p style="margin-top:2.5rem"><a class="btn btn-primary" href="mailto:hallo@withensemble.nl">Plan een gesprek <span class="arrow" aria-hidden="true">→</span></a></p>
+        <ul class="person-links" style="margin-top:2rem">
+          <li><a href="https://www.linkedin.com/in/michielalkemade/" target="_blank" rel="noopener"><span class="avatar"><img src="assets/foto-michiel.jpg" alt="Michiel" width="480" height="480" loading="lazy" /></span>Michiel <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg><span class="sr-only"> op LinkedIn</span></a></li>
+          <li><a href="https://www.linkedin.com/in/rdengelbronner/" target="_blank" rel="noopener"><span class="avatar"><img src="assets/foto-reinout.jpg" alt="Reinout" width="480" height="480" loading="lazy" /></span>Reinout <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg><span class="sr-only"> op LinkedIn</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTIE 10 — FOOTER -->
+  <footer class="footer band-night">
+    <div class="wrap">
+      <img class="footer-logo" src="assets/logo-ensemble-white.svg" alt="Ensemble" width="260" height="44" />
+      <p class="footer-tag">Wij krijgen nieuwe initiatieven van de grond.</p>
+      <div class="footer-bottom">
+        <ul>
+          <li>© 2026 Ensemble</li>
+          <li><a href="mailto:hallo@withensemble.nl">Contact</a></li>
+          <li><a href="#">Algemene voorwaarden</a></li>
+          <li><a href="#">Privacyvoorwaarden</a></li>
+        </ul>
+        <p>Deze site is met liefde gemaakt in Amsterdam <span aria-label="hartje">❤️</span></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ensemble — Design System V6.8</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/ensemble.css" />
+  <style>
+    /* alleen voor deze styleguide-pagina */
+    .sg-section { padding-block: clamp(3rem, 6vw, 5rem); border-bottom: 1px solid var(--line); }
+    .sg-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+    .swatch { border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); background: var(--white); }
+    .swatch i { display: block; height: 96px; }
+    .swatch div { padding: 0.8rem 1rem 1rem; font-size: var(--fs-small); line-height: 1.35; }
+    .swatch b { display: block; font-family: var(--f-display); font-size: 1.0625rem; color: var(--navy); }
+    .swatch code { color: var(--muted); }
+    .sg-sub { font-family: var(--f-display); font-weight: 700; font-size: 1.125rem; margin: 2.5rem 0 1rem; color: var(--navy); }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .sg-pad { border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2.5rem); }
+    .sg-logo { display: grid; place-items: center; min-height: 170px; border-radius: var(--radius); padding: 2rem; }
+    .sg-logo img { width: min(100%, 300px); }
+    .type-row { display: grid; gap: 0.25rem 2rem; padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+    @media (min-width: 900px) { .type-row { grid-template-columns: 14rem 1fr; align-items: baseline; } }
+    .type-row .spec { font-size: var(--fs-small); color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); }
+    th, td { text-align: left; padding: 0.75rem 1rem 0.75rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-weight: 600; color: var(--muted); }
+    .pair { display: inline-block; padding: 0.3em 0.8em; border-radius: 8px; font-weight: 600; }
+    code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-logo" href="index.html"><img src="assets/logo-ensemble.svg" alt="Ensemble" width="178" height="30" /></a>
+      <nav aria-label="Styleguide">
+        <ul class="nav-links">
+          <li><a href="#kleur">Kleur</a></li>
+          <li><a href="#type">Type</a></li>
+          <li><a href="#componenten">Componenten</a></li>
+          <li><a href="#logo">Logo</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-secondary btn-sm" href="index.html">Voorbeeldsite</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section band-paper">
+      <div class="wrap">
+        <p class="label" style="margin-bottom:1.5rem">Design System · V6.8 · 23 september 2026</p>
+        <h1>Blauw &amp; redactioneel.</h1>
+        <p class="statement" style="margin-top:2.5rem">De kleur, de vette koppen en de pills van Lebara. De rust, het raster en de grote zinnen van Verve. En het violet en roze van ons eigen logo als accent. Zonder animaties: alles staat stil en is direct leesbaar.</p>
+      </div>
+    </section>
+
+    <!-- KLEUR -->
+    <section class="sg-section" id="kleur">
+      <div class="wrap">
+        <div class="split">
+          <p class="label">01 · Kleur</p>
+          <div>
+            <h2>Palet</h2>
+            <p class="sg-sub">Blauw — kern</p>
+            <div class="sg-grid">
+              <div class="swatch"><i style="background:#242EE0"></i><div><b>Blauw</b><code>#242EE0</code><br />Koppen, links, contactvlak</div></div>
+              <div class="swatch"><i style="background:#0D1167"></i><div><b>Navy</b><code>#0D1167</code><br />Inkt: bodytekst, donkere secties</div></div>
+              <div class="swatch"><i style="background:#070723"></i><div><b>Nacht</b><code>#070723</code><br />Footer, diepste vlak</div></div>
+              <div class="swatch"><i style="background:#3A7AFE"></i><div><b>Helder blauw</b><code>#3A7AFE</code><br />Vlakken op donker, geen kleine tekst</div></div>
+              <div class="swatch"><i style="background:#6E9BFF"></i><div><b>Helder blauw (tekst)</b><code>#6E9BFF</code><br />Labels en accentwoorden op navy</div></div>
+              <div class="swatch"><i style="background:#E7EBFF"></i><div><b>Lavendel</b><code>#E7EBFF</code><br />Lichte band, kaarten, chips</div></div>
+              <div class="swatch"><i style="background:#C9D1FF"></i><div><b>Lavendel 2</b><code>#C9D1FF</code><br />Secundaire tekst op donker</div></div>
+            </div>
+            <p class="sg-sub">Logo-accenten — spaarzaam</p>
+            <div class="sg-grid">
+              <div class="swatch"><i style="background:#FA3C96"></i><div><b>Roze</b><code>#FA3C96</code><br />Primaire CTA, één markering per beeld</div></div>
+              <div class="swatch"><i style="background:#7911F8"></i><div><b>Violet</b><code>#7911F8</code><br />Labels, nummers, kleine accenten</div></div>
+            </div>
+            <p class="sg-sub">Neutraal</p>
+            <div class="sg-grid">
+              <div class="swatch"><i style="background:#FFFFFF"></i><div><b>Wit</b><code>#FFFFFF</code><br />Standaard achtergrond</div></div>
+              <div class="swatch"><i style="background:#FAF8F5"></i><div><b>Papier</b><code>#FAF8F5</code><br />Hero, rustige band</div></div>
+              <div class="swatch"><i style="background:#565A85"></i><div><b>Gedempt</b><code>#565A85</code><br />Secundaire tekst op licht</div></div>
+              <div class="swatch"><i style="background:#D5DAF5"></i><div><b>Lijn</b><code>#D5DAF5</code><br />Haarlijnen op licht</div></div>
+            </div>
+
+            <p class="sg-sub">Contrastparen</p>
+            <table>
+              <tr><th>Combinatie</th><th>Contrast</th><th>Gebruik</th></tr>
+              <tr><td><span class="pair" style="background:#fff;color:#0D1167">Navy op wit</span></td><td>16,2 : 1</td><td>Bodytekst</td></tr>
+              <tr><td><span class="pair" style="background:#fff;color:#242EE0">Blauw op wit</span></td><td>8,3 : 1</td><td>Koppen, links</td></tr>
+              <tr><td><span class="pair" style="background:#E7EBFF;color:#242EE0">Blauw op lavendel</span></td><td>7,0 : 1</td><td>Koppen in lichte band</td></tr>
+              <tr><td><span class="pair" style="background:#0D1167;color:#fff">Wit op navy</span></td><td>16,2 : 1</td><td>Donkere secties</td></tr>
+              <tr><td><span class="pair" style="background:#242EE0;color:#fff">Wit op blauw</span></td><td>8,3 : 1</td><td>Contactvlak, blauwe kaart</td></tr>
+              <tr><td><span class="pair" style="background:#FA3C96;color:#0D1167">Navy op roze</span></td><td>4,8 : 1</td><td>Primaire knop</td></tr>
+              <tr><td><span class="pair" style="background:#fff;color:#7911F8">Violet op wit</span></td><td>6,5 : 1</td><td>Labels</td></tr>
+              <tr><td><span class="pair" style="background:#0D1167;color:#6E9BFF">Helder blauw (tekst) op navy</span></td><td>6,0 : 1</td><td>Labels en accentwoorden op donker</td></tr>
+              <tr><td><span class="pair" style="background:#FA3C96;color:#fff">Wit op roze</span></td><td>3,4 : 1</td><td><strong>Niet</strong> voor tekst — alleen het logo</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPE -->
+    <section class="sg-section" id="type">
+      <div class="wrap">
+        <div class="split">
+          <p class="label">02 · Typografie</p>
+          <div>
+            <h2>Twee fonts, twee stemmen</h2>
+            <p class="lede" style="margin-top:1.5rem"><strong>Bricolage Grotesque</strong> (800/700) voor koppen en cijfers: vet, een tikje eigenwijs, past bij het mollige logo. <strong>Instrument Sans</strong> (400–600) voor al het andere: rustig en redactioneel. Beide via Google Fonts.</p>
+            <div style="margin-top:2rem">
+              <div class="type-row"><p class="spec">H1 · Bricolage 800<br />clamp(40px, 6.9vw, 92px) · lh 0.98 · −0.035em</p><p class="h1">Onze schouders eronder.</p></div>
+              <div class="type-row"><p class="spec">H2 · Bricolage 800<br />clamp(34px, 5vw, 64px) · lh 1.02 · −0.03em</p><p class="h2">Bouwen om te weten</p></div>
+              <div class="type-row"><p class="spec">H3 · Bricolage 700<br />clamp(22px, 2vw, 28px) · lh 1.15</p><p class="h3">Versnellen met AI</p></div>
+              <div class="type-row"><p class="spec">Statement · Instrument Sans 400<br />clamp(24px, 3.1vw, 44px) · lh 1.18 · geen inspringing</p><p class="statement">Een werkende oplossing beantwoordt in twee weken vragen waar een onderzoek een kwartaal over doet.</p></div>
+              <div class="type-row"><p class="spec">Lede · Instrument Sans 400<br />18–22px · lh 1.5 · max 58ch</p><p class="lede">Wij starten projecten op waar iets van afhangt. Ook als er meerdere partijen aan tafel zitten en niemand de baas is.</p></div>
+              <div class="type-row"><p class="spec">Body · Instrument Sans 400<br />17px · lh 1.6 · max 62ch</p><p class="measure">Elke twee weken laten we zien wat er werkt: een gevalideerde aanname, een prototype, een pagina die live staat.</p></div>
+              <div class="type-row"><p class="spec">Label · Instrument Sans 600<br />14px · kapitalen · +0.08em · violet</p><p class="label">Vanaf week 2</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTEN -->
+    <section class="sg-section" id="componenten">
+      <div class="wrap">
+        <div class="split">
+          <p class="label">03 · Componenten</p>
+          <div>
+            <h2>Bouwstenen</h2>
+
+            <p class="sg-sub">Knoppen — altijd pills</p>
+            <div class="sg-row">
+              <a class="btn btn-primary" href="#componenten">Bel of mail ons <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn-primary" href="#componenten">Plan een gesprek</a>
+              <a class="btn btn-secondary" href="#componenten">Bekijk de case</a>
+              <a class="btn btn-primary btn-sm" href="#componenten">Klein</a>
+            </div>
+            <div class="sg-row sg-pad band-navy" style="margin-top:1rem">
+              <a class="btn btn-primary" href="#componenten">Primair op donker <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn-secondary" href="#componenten">Secundair op donker</a>
+            </div>
+
+            <p class="sg-sub">Chips</p>
+            <ul class="chips"><li>Consortia</li><li>Joint ventures</li><li>Platforms</li><li>Ecosystemen</li></ul>
+
+            <p class="sg-sub">Kaarten — radius 24px, geen schaduw</p>
+            <div class="sg-pad band-lavender">
+              <div class="cards cards-3">
+                <article class="card"><p class="n">01</p><h3>Wit op lavendel</h3><p>Standaardkaart met groot nummer.</p></article>
+                <article class="card card-blue"><h3>Blauw</h3><p>Voor het ene blok dat eruit moet springen.</p></article>
+                <article class="card card-outline" style="border-color:var(--lavender-2)"><h3>Omlijnd</h3><p>Rustig, secundair.</p></article>
+              </div>
+            </div>
+
+            <p class="sg-sub">Cijfers &amp; sticker</p>
+            <div class="sg-pad band-navy">
+              <dl class="stats">
+                <div class="stat stat-accent"><dt>9 weken</dt><dd>één roze cijfer per reeks</dd></div>
+                <div class="stat"><dt>125</dt><dd>items in Kennisbank en Tools</dd></div>
+                <div class="stat"><dt>8,6</dt><dd>waardering</dd></div>
+              </dl>
+            </div>
+            <div style="margin-top:1rem"><div class="sticker"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3M13 14h3M8 17.5h3" stroke-width="2.4"/></svg></span><p><strong>Recent:</strong> in 9 weken de basis van een landelijk platform live gebracht voor vier publieke organisaties.</p></div></div>
+
+            <p class="sg-sub">Rijen met haarlijnen &amp; label-kolom</p>
+            <ol class="rows steps">
+              <li><p class="label when">Week 1</p><div><h3>We stappen in</h3><p>Label links, inhoud rechts. 3/9-verdeling op desktop, gestapeld op mobiel.</p></div></li>
+              <li><p class="label when">Vanaf week 2</p><div><h3>Bouwen en valideren tegelijk</h3><p>Lijnen van 1px in <code>--line</code>. Geen kaders, geen schaduwen.</p></div></li>
+            </ol>
+
+            <p class="sg-sub">Callout, citaat, nee-lijst</p>
+            <p class="callout"><strong>Ons ritme:</strong> wekelijks inchecken, elke twee weken laten zien wat werkt.</p>
+            <div class="sg-pad band-navy" style="margin-top:1rem"><blockquote class="quote"><b>Van</b> verspreide kennis <b>naar</b> 1 centrale plek met de kennis, mensen en middelen.</blockquote></div>
+            <ul class="rows nots" style="margin-top:1rem"><li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2.75" stroke-linecap="round"/></svg></span><p><strong>Je zoekt onderzoek of een advies.</strong> Wij leveren iets dat werkt.</p></li></ul>
+
+            <p class="sg-sub">Persoonslinks met portret</p>
+            <div class="sg-pad card-blue"><ul class="person-links"><li><a href="https://www.linkedin.com/in/michielalkemade/"><span class="avatar"><img src="assets/foto-michiel.jpg" alt="Michiel" /></span>Michiel <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg></a></li><li><a href="https://www.linkedin.com/in/rdengelbronner/"><span class="avatar"><img src="assets/foto-reinout.jpg" alt="Reinout" /></span>Reinout <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg></a></li></ul></div>
+            <ul class="person-links person-links-light" style="margin-top:1rem"><li><a href="https://www.linkedin.com/in/michielalkemade/"><span class="avatar"><img src="assets/foto-michiel.jpg" alt="Michiel" /></span>Michiel <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg></a></li><li><a href="https://www.linkedin.com/in/rdengelbronner/"><span class="avatar"><img src="assets/foto-reinout.jpg" alt="Reinout" /></span>Reinout <svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="currentColor"/><path fill="var(--li-bg,#242EE0)" d="M6.4 9.6h2.5V18H6.4zM7.65 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM10.4 9.6h2.4v1.15c.35-.65 1.2-1.35 2.5-1.35 2.65 0 3.15 1.75 3.15 4V18h-2.5v-4.1c0-1 0-2.25-1.4-2.25s-1.6 1.05-1.6 2.15V18h-2.5z"/></svg></a></li></ul>
+
+            <p class="sg-sub">Formuliervelden</p>
+            <div class="cards cards-2">
+              <div class="field"><label for="sg-naam">Naam</label><input id="sg-naam" type="text" placeholder="Je naam" /></div>
+              <div class="field"><label for="sg-mail">E-mail</label><input id="sg-mail" type="email" placeholder="jij@organisatie.nl" /></div>
+            </div>
+
+            <p class="sg-sub">Banden — het ritme van een pagina</p>
+            <div class="sg-grid">
+              <div class="swatch"><i class="band-paper"></i><div><b>.band-paper</b>Hero, rustpunt</div></div>
+              <div class="swatch"><i style="background:#fff"></i><div><b>wit</b>Lange tekst, rijen</div></div>
+              <div class="swatch"><i class="band-lavender"></i><div><b>.band-lavender</b>Kaarten</div></div>
+              <div class="swatch"><i class="band-navy"></i><div><b>.band-navy</b>Case, cijfers</div></div>
+              <div class="swatch"><i class="band-blue"></i><div><b>.band-blue</b>Contact — één keer</div></div>
+              <div class="swatch"><i class="band-night"></i><div><b>.band-night</b>Footer</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGO -->
+    <section class="sg-section" id="logo" style="border-bottom:0">
+      <div class="wrap">
+        <div class="split">
+          <p class="label">04 · Logo</p>
+          <div>
+            <h2>Het logo blijft zichzelf</h2>
+            <p class="lede" style="margin-top:1.5rem">Violet ligt op de kleurencirkel pal naast ons blauw, en het roze van de logoschaduw is dezelfde familie als Lebara's magenta knoppen. Daarom hoeft het logo niet herkleurd: het roze wordt de CTA-kleur, het violet de labelkleur.</p>
+            <div class="cards cards-3" style="margin-top:2rem">
+              <div><div class="sg-logo" style="background:#fff;border:1px solid var(--line)"><img src="assets/favicon.svg" alt="Ensemble icoon" style="width:96px" /></div><p class="small muted" style="margin-top:0.6rem"><code>favicon.svg</code> — icoon uit Logo V2, favicon</p></div>
+              <div><div class="sg-logo" style="background:#fff;border:1px solid var(--line)"><img src="assets/logo-ensemble.svg" alt="Ensemble logo, origineel" /></div><p class="small muted" style="margin-top:0.6rem"><code>logo-ensemble.svg</code> — op wit, papier en lavendel</p></div>
+              <div><div class="sg-logo band-navy"><img src="assets/logo-ensemble-white.svg" alt="Ensemble logo, wit met roze schaduw" /></div><p class="small muted" style="margin-top:0.6rem"><code>logo-ensemble-white.svg</code> — op navy, nacht en blauw</p></div>
+              <div><div class="sg-logo band-lavender"><img src="assets/logo-ensemble-blue.svg" alt="Ensemble logo, blauw" /></div><p class="small muted" style="margin-top:0.6rem"><code>logo-ensemble-blue.svg</code> — mono-blauw, optioneel</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer band-night">
+    <div class="wrap">
+      <img class="footer-logo" src="assets/logo-ensemble-white.svg" alt="Ensemble" width="260" height="44" />
+      <div class="footer-bottom"><p>Ensemble Design System V6.8 · <a href="index.html">naar de voorbeeldsite</a></p></div>
+    </div>
+  </footer>
+</body>
+</html>
