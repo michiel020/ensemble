@@ -331,5 +331,12 @@
     </div>
   </footer>
 
+  <!-- Feedbackmodus (alleen actief met ?feedback). Dit verborgen formulier laat Netlify het formulier "feedback" herkennen. -->
+  <form name="feedback" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" /><input name="naam" /><input name="soort" /><textarea name="opmerking"></textarea>
+    <input name="sectie" /><input name="sectietitel" /><input name="element" /><input name="citaat" />
+    <input name="pagina" /><input name="versie" /><input name="scherm" /><input name="moment" />
+  </form>
+  <script src="assets/feedback.js?v=V6.9" defer></script>
 </body>
 </html>

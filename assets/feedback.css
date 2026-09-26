@@ -1,0 +1,81 @@
+/* Ensemble — feedbackmodus (alleen actief met ?feedback). Geen animaties. */
+.fb-ui { font-family: var(--f-body); font-size: var(--fs-small); line-height: 1.45; color: var(--navy); }
+.fb-ui *, .fb-ui *::before, .fb-ui *::after { box-sizing: border-box; }
+
+.fb-active body { padding-bottom: 96px; }
+
+.fb-bar {
+  position: fixed; z-index: 10000; left: 16px; right: 16px; bottom: 16px;
+  max-width: 880px; margin-inline: auto;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px;
+  padding: 10px 10px 10px 20px;
+  background: var(--night); color: var(--white);
+  border-radius: var(--pill); box-shadow: 0 8px 28px rgba(7, 7, 35, .28);
+}
+.fb-bar-text { margin: 0; font-weight: 600; }
+.fb-bar-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.fb-btn {
+  font: inherit; font-weight: 600; cursor: pointer;
+  padding: .6em 1.1em; border-radius: var(--pill);
+  border: 1.5px solid var(--lavender-2); background: transparent; color: inherit;
+}
+.fb-btn:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
+.fb-btn-primary { background: var(--pink); border-color: var(--pink); color: var(--navy); }
+.fb-btn-primary:hover { background: var(--white); border-color: var(--white); }
+.fb-btn-ghost { border-color: transparent; text-decoration: underline; text-underline-offset: .2em; }
+.fb-btn:disabled { opacity: .55; cursor: default; }
+
+.fb-panel {
+  position: fixed; z-index: 10001; right: 16px; bottom: 96px;
+  width: min(420px, calc(100vw - 32px)); max-height: calc(100vh - 128px); overflow: auto;
+  padding: 20px; background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: 0 12px 40px rgba(7, 7, 35, .22);
+}
+.fb-panel[hidden] { display: none; }
+.fb-panel .fb-btn { color: var(--navy); border-color: var(--navy); }
+.fb-panel .fb-btn:hover { background: var(--navy); color: var(--white); }
+.fb-panel .fb-btn-primary { border-color: var(--pink); }
+.fb-panel .fb-btn-ghost { border-color: transparent; }
+
+.fb-ctx { padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.fb-ctx p { margin: 0; }
+.fb-ctx-sec { font-weight: 700; color: var(--violet); }
+.fb-ctx-quote { margin-top: 4px !important; color: var(--muted); font-style: italic; }
+
+.fb-chips { border: 0; margin: 0 0 14px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.fb-chips legend { padding: 0; margin-bottom: 6px; font-weight: 600; }
+.fb-chips input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.fb-chips label {
+  cursor: pointer; padding: .35em .9em; border-radius: var(--pill);
+  background: var(--lavender); color: var(--navy); font-weight: 600;
+}
+.fb-chips input:checked + label { background: var(--blue); color: var(--white); }
+.fb-chips input:focus-visible + label { outline: 3px solid var(--pink); outline-offset: 2px; }
+
+.fb-label { display: block; font-weight: 600; margin-bottom: 4px; }
+.fb-panel textarea, .fb-panel input[type="text"] {
+  display: block; width: 100%; margin-bottom: 12px;
+  font: inherit; color: var(--navy); padding: 10px 12px;
+  border: 1.5px solid var(--line); border-radius: 10px; background: var(--white);
+}
+.fb-panel textarea { resize: vertical; min-height: 110px; }
+.fb-panel textarea:focus, .fb-panel input[type="text"]:focus { outline: 3px solid var(--pink); outline-offset: 1px; border-color: var(--navy); }
+.fb-status { margin: 0 0 12px; color: var(--muted); }
+.fb-status:empty { display: none; }
+.fb-panel-actions { display: flex; gap: 8px; }
+
+/* aanwijzen */
+.fb-picking, .fb-picking * { cursor: crosshair !important; }
+.fb-picking .fb-ui, .fb-picking .fb-ui * { cursor: auto !important; }
+.fb-picking .fb-ui .fb-btn { cursor: pointer !important; }
+.fb-hover { outline: 2px dashed var(--pink) !important; outline-offset: 2px !important; }
+.fb-target { outline: 3px solid var(--pink) !important; outline-offset: 2px !important; }
+
+@media (max-width: 640px) {
+  .fb-bar { border-radius: var(--radius-sm); padding: 12px; }
+  .fb-bar-text { width: 100%; font-size: .875rem; }
+  .fb-btn { padding: .5em .9em; font-size: .875rem; }
+  .fb-panel { right: 16px; left: 16px; width: auto; bottom: 16px; max-height: calc(100vh - 32px); }
+}
